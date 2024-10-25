@@ -1,6 +1,7 @@
 # Built by VilmaoTech.
 import pyautogui as pag
 import tkinter as tk
+import time as time
 
 # Creating the opening codes
 def max():
@@ -26,8 +27,19 @@ def skysho():
     pag.press("win")
     pag.write("https://skyshowtime.com/watch/home")
     pag.press("enter")
+    
+def search(trueValue: str):
+    pag.press("win")
+    pag.write(f'{trueValue}')
+    pag.press("enter")
 
-
+def yt():
+    pag.press("win")
+    pag.write('cmd')
+    pag.press("enter")
+    time.sleep(3)
+    pag.write('chrome --new-window "http://youtube.com/"')
+    pag.press("enter")
 w = tk.Tk()
 
 w.title('PC Remote')
@@ -49,10 +61,24 @@ skyshobtn.pack()
 netflixbtn = tk.Button(w, text="Netflix", command=netflix, font=("Times New Roman", 25, "bold"))
 netflixbtn.pack()
 
+ytbtn = tk.Button(w, text="Youtube", command=yt, font=("Times New Roman", 25, "bold"))
+ytbtn.pack()
 
 
+searchlabel = tk.Label(w, text="Search what you need::", font=("Airal", 20, "bold"))
+searchlabel.pack()
 
+searchentry = tk.Entry(w, width=32)
+searchentry.pack()
 
+def getValueandSearch():
+    searchValue: str = searchentry.get()
+    print(f'Search:: {searchValue}')
+    search(searchValue)
+    
+    
+searchgetbutton = tk.Button(w, text="KERESS!", command=getValueandSearch)
+searchgetbutton.pack()
 
 
 footer = tk.Label(w, text="© 2024 VilmaoTech")
