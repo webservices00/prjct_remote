@@ -7,3 +7,4 @@
 *Till 2025/02/20 only EU version is released!*
 
 Project built, managed and released by VilmaoTech.
+***© 2024 VilmaoTech
