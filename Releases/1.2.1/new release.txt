@@ -1,0 +1,13 @@
+PRJCT_REMOTE(PC REMOTE) NEW RELEASE: 1.2.1
+What's new?
+*Bug Fixes
+    -Youtube openning problem fixed
+*New Features
+    -TV channel compability added (FIXED TO: TELEKOM TVGO HU). Only some channels now, but we are working on adding more channels!
+What's coming the next release(1.2.2):
+*Custom TV channel compability
+    -You will be able to open a channel using its channel number
+
+
+Thank you for using us again!
+2024 VilmaoTech.
