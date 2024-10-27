@@ -40,6 +40,14 @@ def yt():
     time.sleep(3)
     pag.write('chrome --new-window "http://youtube.com/"')
     pag.press("enter")
+
+def csatorna(channelId, channelName):
+    # channelId is the channel variable in this function
+    print(f'OPENING: TV(Telekom TV GO) - Csatorna : {channelName}, {channelId}')
+    pag.press("win")
+    pag.write(f'https://player.telekomtvgo.hu/player/live?channelNumber={channelId}')
+    pag.press("enter")
+
 w = tk.Tk()
 
 w.title('PC Remote')
@@ -64,8 +72,52 @@ netflixbtn.pack()
 ytbtn = tk.Button(w, text="Youtube", command=yt, font=("Times New Roman", 25, "bold"))
 ytbtn.pack()
 
+def show():
+    # Set the text to the current channel
+    label.config( text = clicked.get() )
+    # Get the channel data
+    channelRaw = clicked.get()
+    # Split the Channel data into the needed sections
+    channelArray = channelRaw.split(" - ")
+    # Get the channelId(Channel number)
+    channel = channelArray[1]
+    # Get The channelName(name of the channel)
+    channelName = channelArray[0]
+    csatorna(channel, channelName)
+    
+  
+# Dropdown menu options 
+options = [ 
+    "Comedy Central - 64", 
+    "M4 sport - 4", 
+    "MATCH4 - 45", 
+    "SPORT1 - 46", 
+    "EUROSPORT1 - 47", 
+    "SPORT2 - 48", 
+    "EUROSPORT2 - 49",
+    "ARENA4 - 50",
+    "SPÍLER1 - 51",
+    "SPÍLER2 - 52"
+] 
+  
+# datatype of menu text 
+clicked = tk.StringVar() 
+  
+# initial menu text 
+clicked.set( "TV Csatornák" ) 
+  
+# Create Dropdown menu 
+drop = tk.OptionMenu(w , clicked , *options ) 
+drop.pack() 
+  
+# Create button, it will change label text 
+button = tk.Button(w , text = "click Me" , command = show ).pack() 
+  
+# Create Label 
+label = tk.Label(w , text = " VÁLASSZ CSATORNÁT!", font=("Arial", 20, "bold") ) 
+label.pack() 
 
-searchlabel = tk.Label(w, text="Search what you need::", font=("Airal", 20, "bold"))
+searchlabel = tk.Label(w, text="KERESÉS ? ", font=("Airal", 20, "bold"))
 searchlabel.pack()
 
 searchentry = tk.Entry(w, width=32)
@@ -83,4 +135,9 @@ searchgetbutton.pack()
 
 footer = tk.Label(w, text="© 2024 VilmaoTech")
 footer.pack()
+ver = tk.Label(w, text="Release:1.2.1")
+ver.pack()
 w.mainloop()
+
+def strf():
+    print("dsf")
