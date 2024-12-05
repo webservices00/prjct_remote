@@ -1,4 +1,4 @@
-[VILMAOTECH](https://vt-core.vercel.app)
+[VILMAOTECH](https://vilmaotech-glo.vercel.app)
 
 **PRJCT_REMOTE is a python project to make using a computer more like using a television!**
 
